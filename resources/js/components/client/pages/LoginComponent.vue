@@ -8,7 +8,7 @@
         <img class="img-fluid" src="http://templates.creativouae.com/creativo/sekko/wp-content/uploads/2020/08/logo-creativo-normal.png" alt="Creativo" />
 
         <!--Login-->
-        <h1>Achilles Login</h1>
+        <h1>Fides Login</h1>
         <div id="form">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Email Address">
