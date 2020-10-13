@@ -25,4 +25,22 @@ mix.babel([
 ], 'public/src/js/home.js').version();
 
 mix.js('resources/js/app.js', 'public/src/js/app.js')
-    .sourceMaps();
+    .version();
+
+// administrator
+
+mix.styles([
+    'resources/dashboard/assets/vendor/nucleo/css/nucleo.css',
+// 'resources/dashboard/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css',
+    'resources/dashboard/assets/css/argon.css',
+], 'public/src/css/dashboard.css').version();
+
+
+mix.babel([
+    'resources/dashboard/assets/vendor/jquery/dist/jquery.min.js',
+    'resources/dashboard/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js',
+    'resources/dashboard/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js',
+    'resources/dashboard/assets/vendor/chart.js/dist/Chart.min.js',
+    'resources/dashboard/assets/vendor/chart.js/dist/Chart.extension.js',
+    'resources/dashboard/assets/js/argon.js',
+], 'public/src/js/dashboard.js').version();

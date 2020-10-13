@@ -18,3 +18,15 @@ Route::get('/', function () {
 });
 
 Route::get('login','HomeController@login')->name('home.login');
+
+Route::prefix('administrator')->namespace('Administrator')->group(function() {
+   Route::get('/', 'HomeController@index')->name('admin.home');
+});
+
+Route::prefix('client')->namespace('Client')->group(function() {
+   Route::get('/', 'HomeController@index');
+});
+
+Route::prefix('staff')->namespace('Staff')->group(function() {
+   Route::get('/', 'HomeController@index');
+});
