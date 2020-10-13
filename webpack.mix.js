@@ -12,6 +12,9 @@ const mix = require('laravel-mix');
  */
 
 
+mix.js('resources/js/app.js', 'public/src/js/app.js')
+.version();
+
 
 mix.styles([
     'resources/css/style.css',
@@ -24,20 +27,16 @@ mix.babel([
     'resources/js/bootstrap-4.4.1.js',
 ], 'public/src/js/home.js').version();
 
-mix.js('resources/js/app.js', 'public/src/js/app.js')
-    .version();
-
 // administrator
-
 mix.styles([
     'resources/dashboard/assets/vendor/nucleo/css/nucleo.css',
-// 'resources/dashboard/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css',
     'resources/dashboard/assets/css/argon.css',
 ], 'public/src/css/dashboard.css').version();
 
 
 mix.babel([
-    'resources/dashboard/assets/vendor/jquery/dist/jquery.min.js',
+    // 'resources/dashboard/assets/vendor/jquery/dist/jquery.min.js',
+    'resources/js/jquery-3.4.1.min.js',
     'resources/dashboard/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js',
     'resources/dashboard/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js',
     'resources/dashboard/assets/vendor/chart.js/dist/Chart.min.js',
