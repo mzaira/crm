@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    @include('clients.includes.sidebar')
+    @include('staff.includes.sidebar')
     @yield('content')
 <script src="{{ asset('src/js/dashboard') }}"></script>
 </body>
