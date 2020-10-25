@@ -13,39 +13,51 @@
               <!-- Nav items -->
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link active" href="examples/dashboard.html">
+                <a class="nav-link active" href="{{ route('admin.home') }}">
                     <i class="ni ni-align-left-2 text-primary"></i>
                     <span class="nav-link-text">Dashboard</span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="examples/icons.html">
+                <a class="nav-link" href="{{ route('admin.client') }}">
                     <i class="ni ni ni-badge text-orange"></i>
                     <span class="nav-link-text">Clients</span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="examples/icons.html">
+                <a class="nav-link" href="{{ route('admin.employee') }}">
                     <i class="ni ni ni-user-run text-orange"></i>
                     <span class="nav-link-text">Employees</span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="examples/icons.html">
+                <a class="nav-link" href="{{ route('admin.leave_request') }}">
                     <i class="ni ni-folder-17 text-orange"></i>
                     <span class="nav-link-text">Leave Request</span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="examples/icons.html">
+                <a class="nav-link" href="{{ route('admin.projects') }}">
+                    <i class="ni ni-folder-17 text-orange"></i>
+                    <span class="nav-link-text">Projects</span>
+                  </a>
+                </li>
+                {{-- <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.domains') }}">
+                    <i class="ni ni-folder-17 text-orange"></i>
+                    <span class="nav-link-text">Domains</span>
+                  </a>
+                </li> --}}
+                <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.documents') }}">
                     <i class="ni ni-single-copy-04 text-orange"></i>
                     <span class="nav-link-text">Documents</span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="examples/icons.html">
+                <a class="nav-link" href="{{ route('admin.tickets') }}">
                     <i class="ni ni ni-notification-70  text-orange"></i>
-                    <span class="nav-link-text">Tickets</span>
+                    <span class="nav-link-text">Ticket Request</span>
                   </a>
                 </li>
               </ul>
@@ -58,33 +70,21 @@
               <!-- Navigation -->
               <ul class="navbar-nav mb-md-3">
                 <li class="nav-item">
-                  <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html" target="_blank">
+                  <a class="nav-link" href="https://creativouae.com/articles-and-newsletters/" target="_blank">
                     <i class="ni ni-spaceship"></i>
                     <span class="nav-link-text">Blogs</span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html" target="_blank">
+                  <a class="nav-link" href="https://creativouae.com/articles-and-newsletters/" target="_blank">
                     <i class="ni ni-palette"></i>
                     <span class="nav-link-text">FAQ's</span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html" target="_blank">
+                  <a class="nav-link" href="https://creativouae.com/articles-and-newsletters/" target="_blank">
                     <i class="ni ni-ui-04"></i>
                     <span class="nav-link-text">News</span>
-                  </a>
-                </li>
-                <li class="nav-item d-none">
-                  <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/plugins/charts.html" target="_blank">
-                    <i class="ni ni-chart-pie-35"></i>
-                    <span class="nav-link-text">Plugins</span>
-                  </a>
-                </li>
-                <li class="nav-item d-none">
-                  <a class="nav-link active active-pro" href="examples/upgrade.html">
-                    <i class="ni ni-send text-dark"></i>
-                    <span class="nav-link-text">Upgrade to PRO</span>
                   </a>
                 </li>
               </ul>
