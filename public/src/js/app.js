@@ -1965,7 +1965,60 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      collection: {
+        email: '',
+        password: ''
+      },
+      password: {
+        email: ''
+      },
+      is_success: true,
+      login_page: true,
+      password_page: false
+    };
+  },
+  methods: {
+    login: function login() {
+      var data = this.collection;
+
+      var _this = this;
+
+      if (data.email == '' && data.password == '') {
+        console.log('requred');
+      } else {
+        axios.post('auth/submit', data).then(function (response) {
+          if (response.status) {
+            console.log(data);
+          }
+        })["catch"](function (error) {
+          console.log("Insert: " + error);
+        });
+      }
+    },
+    forgot_password: function forgot_password() {
+      var data = this.password;
+
+      if (data.email == '') {
+        console.log('required');
+      } else {
+        axios.post('auth/submit', data).then(function (response) {
+          if (response.status) {
+            console.log(data);
+          }
+        })["catch"](function (error) {
+          console.log("Insert: " + error);
+        });
+      }
+    }
+  },
+  created: function created() {
+    console.log('realoaded');
+  }
+});
 
 /***/ }),
 
@@ -19617,79 +19670,71 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-3" }),
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "col-lg-3" }),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-lg-6" }, [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("← Back to Website")]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-lg-6" }, [
-        _c("a", { attrs: { href: "#" } }, [_vm._v("← Back to Website")]),
+      _c("div", { staticClass: "text-center", attrs: { id: "login" } }, [
+        _c("img", {
+          staticClass: "img-fluid",
+          attrs: {
+            src:
+              "http://templates.creativouae.com/creativo/sekko/wp-content/uploads/2020/08/logo-creativo-normal.png",
+            alt: "Creativo"
+          }
+        }),
         _vm._v(" "),
-        _c("div", { staticClass: "text-center", attrs: { id: "login" } }, [
-          _c("img", {
-            staticClass: "img-fluid",
-            attrs: {
-              src:
-                "http://templates.creativouae.com/creativo/sekko/wp-content/uploads/2020/08/logo-creativo-normal.png",
-              alt: "Creativo"
-            }
-          }),
-          _vm._v(" "),
-          _c("h1", [_vm._v("Fides Login")]),
-          _vm._v(" "),
-          _c("div", { attrs: { id: "form" } }, [
-            _c("div", { staticClass: "form-group" }, [
-              _c("input", {
-                staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Email Address" }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _c("input", {
-                staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Password" }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-lg-6" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-lg-6" }, [
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: { type: "submit", value: "Login →" }
-                  })
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-lg-12 text-left", attrs: { id: "forgot" } },
-            [
-              _c("p", [
-                _vm._v("Forgot password? "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Click here.")])
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "d-none" }, [
-            _c("h1", [_vm._v("Forgot Password")]),
-            _vm._v(" "),
-            _c("div", { attrs: { id: "form" } }, [
+        _vm.login_page
+          ? _c("div", { staticClass: "form-login", attrs: { id: "form" } }, [
+              _c("h1", [_vm._v(" Login")]),
+              _vm._v(" "),
               _c("div", { staticClass: "form-group" }, [
                 _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.collection.email,
+                      expression: "collection.email"
+                    }
+                  ],
                   staticClass: "form-control",
-                  attrs: { type: "text", placeholder: "Email Address" }
+                  attrs: { type: "email", placeholder: "Email Address" },
+                  domProps: { value: _vm.collection.email },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.collection, "email", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.collection.password,
+                      expression: "collection.password"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "password", placeholder: "Password" },
+                  domProps: { value: _vm.collection.password },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.collection, "password", $event.target.value)
+                    }
+                  }
                 })
               ]),
               _vm._v(" "),
@@ -19700,23 +19745,97 @@ var staticRenderFns = [
                   _c("div", { staticClass: "col-lg-6" }, [
                     _c("input", {
                       staticClass: "form-control",
-                      attrs: { type: "submit", value: "Submit →" }
+                      attrs: { type: "submit", value: "Login →" },
+                      on: { click: _vm.login }
                     })
                   ])
                 ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-lg-12 text-left", attrs: { id: "forgot" } },
-              [_c("a", { attrs: { href: "#" } }, [_vm._v("← Back to Login")])]
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-3" })
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-lg-12 text-left", attrs: { id: "forgot" } },
+                [
+                  _c("p", [
+                    _vm._v("Forgot password? "),
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "#" },
+                        on: {
+                          click: function($event) {
+                            _vm.login_page = false
+                            _vm.password_page = true
+                          }
+                        }
+                      },
+                      [_vm._v("Click here.")]
+                    )
+                  ])
+                ]
+              )
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.password_page
+          ? _c("div", {}, [
+              _c("h1", [_vm._v("Forgot Password")]),
+              _vm._v(" "),
+              _c("div", { attrs: { id: "form" } }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-lg-6" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-6" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "submit", value: "Submit →" },
+                        on: { click: _vm.forgot_password }
+                      })
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-lg-12 text-left", attrs: { id: "forgot" } },
+                [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          _vm.password_page = false
+                          _vm.login_page = true
+                        }
+                      }
+                    },
+                    [_vm._v("← Back to Login")]
+                  )
+                ]
+              )
+            ])
+          : _vm._e()
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-lg-3" })
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { type: "text", placeholder: "Email Address" }
+      })
     ])
   }
 ]
@@ -32037,7 +32156,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/larryparba/web/crm/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\xampp2020\htdocs\crm\resources\js\app.js */"./resources/js/app.js");
 
 
 /***/ })

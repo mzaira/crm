@@ -17,7 +17,12 @@ Route::get('/', function () {
    return redirect(route('home.login'));
 });
 
-Route::get('login','HomeController@login')->name('home.login');
+Route::get('/','HomeController@login')->name('home.login');
+Route::post('auth/submit', 'HomeController@submit_login')->name('home.login.submit');
+Route::post('auth/password', 'HomeController@submit_password')->name('home.password.submit');
+
+Route::prefix('auth', function() {
+});
 
 Route::prefix('administrator')->namespace('Administrator')->group(function() {
 
