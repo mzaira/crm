@@ -22,19 +22,19 @@
               </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a href="#" class="btn btn-sm btn-neutral">New Client</a>
-              <a href="#" class="btn btn-sm btn-neutral">New Employee</a>
+              {{-- <a href="#" class="btn btn-sm btn-neutral">New Client</a>
+              <a href="#" class="btn btn-sm btn-neutral">New Employee</a> --}}
             </div>
           </div>
           <!-- Card stats -->
           <div class="row">
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-4 col-md-6">
               <div class="card card-stats">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Total Projects</h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Total Minutes of Meeting</h5>
                       <span class="h2 font-weight-bold mb-0">350</span>
                     </div>
                     <div class="col-auto">
@@ -46,13 +46,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-4 col-md-6">
               <div class="card card-stats">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Total Client</h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Total Presentations</h5>
                       <span class="h2 font-weight-bold mb-0">2,356</span>
                     </div>
                     <div class="col-auto">
@@ -64,13 +64,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-4 col-md-6">
               <div class="card card-stats">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Total Employee</h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Total Documents</h5>
                       <span class="h2 font-weight-bold mb-0">924</span>
                     </div>
                     <div class="col-auto">
@@ -82,30 +82,12 @@
                 </div>
               </div>
             </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-stats">
-                <!-- Card body -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Total Domains</h5>
-                      <span class="h2 font-weight-bold mb-0">49</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
-                        <i class="ni ni-chart-bar-32"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
     <!-- Page content -->
-    <div class="container-fluid mt--6">
+    {{-- <div class="container-fluid mt--6">
       <div class="row">
         <div class="col-xl-8">
           <div class="card bg-default">
@@ -382,6 +364,6 @@
       </div>
       <!-- Footer -->
       @include('clients.includes.footer')
-    </div>
+    </div> --}}
   </div>
 @endsection

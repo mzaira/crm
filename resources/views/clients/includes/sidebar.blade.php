@@ -13,33 +13,27 @@
               <!-- Nav items -->
               <ul class="navbar-nav">
                 <li class="nav-item">
-                <a class="nav-link active" href="{{ route('admin.home') }}">
+                <a class="nav-link active" href="{{ route('client.index') }}">
                     <i class="ni ni-align-left-2 text-primary"></i>
                     <span class="nav-link-text">Dashboard</span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ route('admin.documents') }}">
+                  <a class="nav-link" href="{{ route('client.presentation') }}">
                       <i class="ni ni-single-copy-04 text-orange"></i>
                       <span class="nav-link-text">My Presentations</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ route('admin.documents') }}">
+                  <a class="nav-link" href="{{ route('client.meeting_minutes') }}">
                       <i class="ni ni-single-copy-04 text-orange"></i>
                       <span class="nav-link-text">My Metting Minutes</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.documents') }}">
+                <a class="nav-link" href="{{ route('client.documents') }}">
                     <i class="ni ni-single-copy-04 text-orange"></i>
                     <span class="nav-link-text">My Documents</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.tickets') }}">
-                    <i class="ni ni ni-notification-70  text-orange"></i>
-                    <span class="nav-link-text">Request Support</span>
                   </a>
                 </li>
               </ul>
@@ -58,15 +52,9 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="https://creativouae.com/articles-and-newsletters/" target="_blank">
-                    <i class="ni ni-palette"></i>
-                    <span class="nav-link-text">FAQ's</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="https://creativouae.com/articles-and-newsletters/" target="_blank">
-                    <i class="ni ni-ui-04"></i>
-                    <span class="nav-link-text">News</span>
+                   <a class="nav-link" href="{{ route('home.logout') }}" target="_blank">
+                    <i class="ni ni-button-power"></i>
+                    <span class="nav-link-text">Logout</span>
                   </a>
                 </li>
               </ul>
