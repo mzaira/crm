@@ -5,7 +5,7 @@
     <div class="col-lg-6">
       <a href="https://creativouae.com/">← Back to Website</a>
       <div id="login" class="text-center">
-        <img class="img-fluid" src="http://templates.creativouae.com/creativo/sekko/wp-content/uploads/2020/08/logo-creativo-normal.png" alt="Creativo" />
+        <img class="img-fluid" src="/logo-creativo-normal.png" alt="Creativo" />
 
         <!--Login-->
         <div id="form" class="form-login" v-if="login_page">
