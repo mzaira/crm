@@ -1966,6 +1966,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -19681,11 +19682,7 @@ var render = function() {
       _c("div", { staticClass: "text-center", attrs: { id: "login" } }, [
         _c("img", {
           staticClass: "img-fluid",
-          attrs: {
-            src:
-              "http://templates.creativouae.com/creativo/sekko/wp-content/uploads/2020/08/logo-creativo-normal.png",
-            alt: "Creativo"
-          }
+          attrs: { src: "/logo-creativo-normal.png", alt: "Creativo" }
         }),
         _vm._v(" "),
         _vm.login_page
@@ -32023,7 +32020,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); // const
 
-window.base_url = process.env.BASE_URL;
+window.BASE_URL = process.env.BASE_URL;
 
 var app = new Vue({
   el: '#wrapper'
