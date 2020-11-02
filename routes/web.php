@@ -13,10 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
+//    return redirect(route('home.login'));
+// });
+
+Route::get('/login', function() {
    return redirect(route('home.login'));
 });
-
+ 
 Route::get('/','HomeController@login')->name('home.login');
 Route::get('logout', 'HomeController@logout')->name('home.logout');
 
