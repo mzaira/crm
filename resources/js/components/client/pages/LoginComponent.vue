@@ -29,6 +29,7 @@
           </div>
         </div>
        
+       
         <!--Forgot-->
         <div class="" v-if="password_page">
           <h1>Forgot Password</h1>
