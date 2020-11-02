@@ -13,6 +13,7 @@ class HomeController extends Controller
     {
         $this->request = $request;
     } 
+    
    
     public function login() {
         return view('public.pages.login');

@@ -13,25 +13,25 @@
               <!-- Nav items -->
               <ul class="navbar-nav">
                 <li class="nav-item">
-                <a class="nav-link active" href="{{ route('client.index') }}">
+                <a class="nav-link {{ $active === 'dashboard' ? 'active' : '' }}" href="{{ route('client.index') }}">
                     <i class="ni ni-align-left-2 text-primary"></i>
                     <span class="nav-link-text">Dashboard</span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ route('client.presentation') }}">
+                  <a class="nav-link {{ $active === 'presentations' ? 'active' : '' }}" href="{{ route('client.presentation') }}">
                       <i class="ni ni-single-copy-04 text-orange"></i>
                       <span class="nav-link-text">My Presentations</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ route('client.meeting_minutes') }}">
+                  <a class="nav-link {{ $active === 'meeting_minutes' ? 'active' : '' }}" href="{{ route('client.meeting_minutes') }}">
                       <i class="ni ni-single-copy-04 text-orange"></i>
                       <span class="nav-link-text">My Metting Minutes</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="{{ route('client.documents') }}">
+                <a class="nav-link {{ $active === 'documents' ? 'active' : '' }}" href="{{ route('client.documents') }}">
                     <i class="ni ni-single-copy-04 text-orange"></i>
                     <span class="nav-link-text">My Documents</span>
                   </a>

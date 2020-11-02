@@ -41,24 +41,17 @@ Route::prefix('administrator')->namespace('Administrator')->group(function() {
    });
 
    Route::prefix('leave_request')->group(function() {
-      Route::get('/', 'HomeController@employee_page')->name('admin.leave_request');
+      Route::get('/', 'HomeController@leave_request_page')->name('admin.leave_request');
    });
 
    Route::prefix('projects')->group(function() {
-      Route::get('/', 'HomeController@employee_page')->name('admin.projects');
-   });
-
-   Route::prefix('domains')->group(function() {
-      Route::get('/', 'HomeController@employee_page')->name('admin.domains');
+      Route::get('/', 'HomeController@project_page')->name('admin.projects');
    });
 
    Route::prefix('documents')->group(function() {
-      Route::get('/', 'HomeController@employee_page')->name('admin.documents');
+      Route::get('/', 'HomeController@document_page')->name('admin.documents');
    });
 
-   Route::prefix('tickets')->group(function() {
-      Route::get('/', 'HomeController@employee_page')->name('admin.tickets');
-   });
 
 });
 
@@ -67,7 +60,7 @@ Route::prefix('client')->namespace('Client')->group(function() {
    Route::get('/', 'HomeController@index')->name('client.index');
 
    Route::prefix('presentation')->group(function() {
-      Route::get('/', 'HomeController@presentation_page')->name('client.presentation');
+      Route::get('/', 'HomeController@presentations')->name('client.presentation');
    });
 
    Route::prefix('meeting-minutes')->group(function() {
