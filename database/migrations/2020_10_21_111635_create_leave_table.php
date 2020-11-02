@@ -15,7 +15,8 @@ class CreateLeaveTable extends Migration
     {
         Schema::create('leave', function (Blueprint $table) {
             $table->id();
-            $table->foreignId();
+            // $table->
+            // $table->foreignId();
             $table->timestamps();
         });
     }

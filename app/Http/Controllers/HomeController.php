@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
 class HomeController extends Controller
 {
 
@@ -20,6 +22,23 @@ class HomeController extends Controller
     }
 
     public function submit_login() {
-        dd($this->request);
+
+        $status = false;
+        
+        $this->request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        $credentials = $this->request->only('email', 'password');
+        
+        if (Auth::attempt($credentials)) {
+            // return redirect()->intended('dashboard');
+            $status = true;
+        }
+
+        $response = ['status' => $status];
+        return Response()->json($response, 200);
+
     }
 }

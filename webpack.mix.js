@@ -12,19 +12,21 @@ const mix = require('laravel-mix');
  */
 
 
-mix.js('resources/js/app.js', 'public/src/js/app.js')
+mix.js('resources/js/app.js',
+      'public/src/js/app.js')
 .version();
-
 
 mix.styles([
     'resources/css/style.css',
     'resources/css/bootstrap-4.4.1.css',
+    'resources/vendors/toastr/toaster-box.css',
 ], 'public/src/css/home.css').version();
 
 mix.babel([
     'resources/js/jquery-3.4.1.min.js',
     'resources/js/popper.min.js',
     'resources/js/bootstrap-4.4.1.js',
+    'resources/vendors/toastr/toaster-box.js',
 ], 'public/src/js/home.js').version();
 
 // administrator

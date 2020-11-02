@@ -29,7 +29,7 @@
           </div>
         </div>
        
-       
+
         <!--Forgot-->
         <div class="" v-if="password_page">
           <h1>Forgot Password</h1>
@@ -60,6 +60,7 @@
 <script>
 
 export default {
+
         data() {
             return {
 
@@ -70,18 +71,27 @@ export default {
                 password: {
                   email: '',
                 },
+
                 is_success: true,
                 login_page: true,
                 password_page: false,
             };
         },
         methods: {
+
             login(){
+
                 let data = this.collection
                 var _this = this
 
-                if(data.email == '' && data.password == '') {
-                        console.log('requred')
+                if(data.email == '') {
+                    this.$toastr.e(
+                      "Please Enter your Email"
+                    );
+                }  else if(data.password == '') {
+                    this.$toastr.e(
+                       "Please enter your password"
+                    );
                 } else {
                      axios.post('auth/submit', data).then(function(response){
                        if(response.status) {
@@ -91,9 +101,11 @@ export default {
                         console.log("Insert: "+error);
                     });
                 }
+
             },
 
             forgot_password() {
+
               let data = this.password
 
               if(data.email == '') {
@@ -107,10 +119,14 @@ export default {
                         console.log("Insert: "+error);
                     });
               }
+
             },
         },
         created: function() {
             console.log('realoaded')
+        },
+        mounted: function() {
+           this.$toastr.defaultPosition = "toast-top-right";
         }
 }
 </script>

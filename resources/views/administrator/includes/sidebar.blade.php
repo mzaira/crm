@@ -48,6 +48,12 @@
                     <span class="nav-link-text">Documents</span>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link {{ $active === 'meeting_minutes' ? 'active' : '' }}" href="{{ route('admin.documents') }}">
+                      <i class="ni ni-single-copy-04 text-orange"></i>
+                      <span class="nav-link-text">Meeting Minutes</span>
+                    </a>
+                  </li>
               </ul>
               <!-- Divider -->
               <hr class="my-3">
