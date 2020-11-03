@@ -7,13 +7,12 @@
     <!-- Topnav -->
     @include('administrator.includes.top_nav')
     <!-- Header -->
-    <div class="header bg-primary pb-6">
- 
+    <div class="header bg-primary pb-2">
+      <client-navigator title="{{ $title }}"> </client-navigator>
     </div>
     <!-- Page content -->
-    <div class="container-fluid mt--6">
-
-
+    <div class="container-fluid ">
+      <client-list> </client-list>
       <!-- Footer -->
       @include('administrator.includes.footer')
     </div>

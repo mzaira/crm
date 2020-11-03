@@ -2,9 +2,9 @@
     <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
         <div class="scrollbar-inner">
           <!-- Brand -->
-          <div class="sidenav-header  align-items-center">
+          <div class="sidenav-header align-items-center">
             <a class="navbar-brand" href="javascript:void(0)">
-              <img src="https://www.creativouae.com/wp-content/uploads/2016/08/logo.png" class="navbar-brand-img" alt="...">
+              <img src="/logo-creativo-normal.png" class="navbar-brand-img" alt="...">
             </a>
           </div>
           <div class="navbar-inner">

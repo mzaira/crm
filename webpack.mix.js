@@ -22,6 +22,10 @@ mix.styles([
     'resources/vendors/toastr/toaster-box.css',
 ], 'public/src/css/home.css').version();
 
+mix.js('resources/js/administrator.js',
+      'public/src/js/administrator.js')
+.version();
+
 mix.babel([
     'resources/js/jquery-3.4.1.min.js',
     'resources/js/popper.min.js',

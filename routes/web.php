@@ -20,16 +20,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', function() {
    return redirect(route('home.login'));
 });
- 
+
+
+Route::get('register','HomeController@register')->name('home.register');
 Route::get('/','HomeController@login')->name('home.login');
 Route::get('logout', 'HomeController@logout')->name('home.logout');
-
-Route::post('auth/submit', 'HomeController@submit_login')->name('home.login.submit');
-Route::post('auth/password', 'HomeController@submit_password')->name('home.password.submit');
+Route::post('registers', 'HomeController@submit_register')->name('register.submit');
 
 
-
-Route::prefix('auth', function() {
+Route::prefix('auth')->group(function() {
+   Route::post('login', 'HomeController@submit_login')->name('login.submit');
+   Route::post('password', 'HomeController@submit_password')->name('home.password.submit');
 });
 
 Route::prefix('administrator')->namespace('Administrator')->group(function() {
@@ -54,6 +55,14 @@ Route::prefix('administrator')->namespace('Administrator')->group(function() {
 
    Route::prefix('documents')->group(function() {
       Route::get('/', 'HomeController@document_page')->name('admin.documents');
+   });
+
+   Route::prefix('meeting_minutes')->group(function() {
+      Route::get('/', 'HomeController@meeting_minutes_page')->name('admin.meeting_minutes_page');
+   });
+
+   Route::prefix('presentations')->group(function() {
+      Route::get('/', 'HomeController@presentation_page')->name('admin.presentations');
    });
 
 

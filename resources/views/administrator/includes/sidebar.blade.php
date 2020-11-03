@@ -4,7 +4,7 @@
           <!-- Brand -->
           <div class="sidenav-header  align-items-center">
             <a class="navbar-brand" href="javascript:void(0)">
-              <img src="https://www.creativouae.com/wp-content/uploads/2016/08/logo.png" class="navbar-brand-img" alt="...">
+              <img src="/logo-creativo-normal.png" class="navbar-brand-img" alt="...">
             </a>
           </div>
           <div class="navbar-inner">
@@ -49,11 +49,17 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link {{ $active === 'meeting_minutes' ? 'active' : '' }}" href="{{ route('admin.documents') }}">
+                  <a class="nav-link {{ $active === 'meeting_minutes' ? 'active' : '' }}" href="{{ route('admin.meeting_minutes_page') }}">
                       <i class="ni ni-single-copy-04 text-orange"></i>
                       <span class="nav-link-text">Meeting Minutes</span>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link {{ $active === 'presentations' ? 'active' : '' }}" href="{{ route('admin.presentations') }}">
+                        <i class="ni ni-single-copy-04 text-orange"></i>
+                        <span class="nav-link-text">Presentations</span>
+                      </a>
+                    </li>
               </ul>
               <!-- Divider -->
               <hr class="my-3">

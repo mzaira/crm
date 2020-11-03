@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 use Auth;
 
+use App\Models\User;
+use App\Models\Role;
+
+use Illuminate\Support\Facades\Hash;
+
 class HomeController extends Controller
 {
 
@@ -15,10 +20,13 @@ class HomeController extends Controller
     {
         $this->request = $request;
     } 
-    
    
     public function login() {
         return view('public.pages.login');
+    }
+
+    public function register() {
+        return view('public.pages.register');
     }
 
     public function submit_login() {
@@ -30,15 +38,57 @@ class HomeController extends Controller
             'password' => 'required',
         ]);
 
-        $credentials = $this->request->only('email', 'password');
-        
-        if (Auth::attempt($credentials)) {
-            // return redirect()->intended('dashboard');
-            $status = true;
+        $user = User::where('email', $this->request->email)->first();
+
+        if(!$user) {
+            $response = ['status' => 'false', 'message' => 'User not Found'];
+            return Response()->json($response, 200);
+        } else {
+
+            $credentials = $this->request->only('email', 'password');
+
+            if (Auth::attempt($credentials)) {
+
+                if($user->hasRole('admin')) {
+                    $url = route('admin.index');
+                } 
+
+                if($user->hasRole('client')) {
+                    $url = route('client.index');
+                } 
+
+                $response = ['status' => 'true', 'redirect_url' => $url];
+                return Response()->json($response, 200);
+            }
+
         }
 
         $response = ['status' => $status];
         return Response()->json($response, 200);
 
     }
+
+    public function submit_register() {
+
+        $user = New User;
+        $user->name = $this->request->fullname;
+        $user->email = $this->request->email;
+        $user->password = Hash::make($this->request->password);
+        $user->role = 3;
+
+        if($user->save()) {
+            $user->attachRole('client');
+            $status = true;
+        }
+
+        $response = array('status' => $status);
+        return Response()->json($response);
+
+    }
+
+    public function logout() {
+        Auth::logout();
+        return redirect(route('home.login'));
+    }
+
 }

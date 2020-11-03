@@ -7,9 +7,14 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('role:client');
+    }
     //
     public function index() {
-        return view('clients.pages.index');
+        $meta = ['active' => 'dashboard', 'title' => 'My Dashboard'];
+        return view('clients.pages.index', $meta);
     }
 
     public function presentations() {

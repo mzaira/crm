@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     //
+    public function __construct() {
+        $this->middleware('role:administrator');
+    }
+
     public function index() {
         $meta = array('active' => 'dashboard', 'title' => 'Dashboard');
         return view('administrator.pages.dashboard', $meta);
@@ -36,6 +40,16 @@ class HomeController extends Controller
     public function document_page() {
         $meta = array('active' => 'document', 'title' => 'Document');
         return view('administrator.pages.documents', $meta);
-    }        
+    }     
+
+    public function meeting_minutes_page() {
+        $meta = array('active' => 'meeting_minutes_pages', 'title' => 'Meeting Minutes');
+        return view('administrator.pages.meeting_minutes', $meta);
+    }     
+    
+    public function presentation_page() {
+        $meta = array('active' => 'presentations', 'title' => 'Presentations');
+        return view('administrator.pages.presentations', $meta);
+    }  
 
 }

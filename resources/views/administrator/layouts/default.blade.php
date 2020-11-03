@@ -13,8 +13,11 @@
 </head>
 
 <body>
-    @include('administrator.includes.sidebar')
-    @yield('content')
-<script src="{{ asset('src/js/dashboard') }}"></script>
+  <div class="wrapper" id="wrapper">
+      @include('administrator.includes.sidebar')
+      @yield('content')
+  </div>
+  <script src="{{ asset('src/js/administrator.js') }}"></script>
+  <script src="{{ asset('src/js/dashboard') }}"></script>
 </body>
 </html>

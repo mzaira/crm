@@ -1,43 +1,5 @@
-@extends('administrator.layouts.default')
-
-@section('content')
- 
-  <!-- Main content -->
-  <div class="main-content" id="panel">
-    <!-- Topnav -->
-    @include('administrator.includes.top_nav')
-    <!-- Header -->
-    <div class="header bg-primary pb-2">
-
-        <div class="container-fluid">
-            <div class="header-body">
-              <div class="row align-items-center py-4">
-                <div class="col-lg-6 col-7">
-                  <h6 class="h2 text-white d-inline-block mb-0">Manage {{ $title }}</h6>
-                  <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                    <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                      <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                      <li class="breadcrumb-item"><a href="#">{{ $title }}s</a></li>
-                      {{-- <li class="breadcrumb-item active" aria-current="page">Default</li> --}}
-                    </ol>
-                  </nav>
-                </div>
-                <div class="col-lg-6 col-5 text-right">
-                  <a href="#" class="btn btn-sm btn-neutral">New Client</a>
-                </div>
-              </div>
-              <!-- Card stats -->
-              <div class="row">
-              </div>
-            </div>
-          </div>
-  
-    </div>
-    <!-- Page content -->
-    <div class="container-fluid ">
-
-        <div class="row">
-
+<template>
+    <div class="row">
           <div class="table-responsive">
             <!-- Projects table -->
             <table class="table align-items-center table-flush">
@@ -123,16 +85,15 @@
               </tbody>
             </table>
           </div>
-
-
         </div>
+</template>
 
-        
+<script>
+export default {
 
+}
+</script>
 
+<style>
 
-      <!-- Footer -->
-      @include('administrator.includes.footer')
-    </div>
-  </div>
-@endsection
+</style>

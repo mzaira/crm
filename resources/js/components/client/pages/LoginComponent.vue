@@ -77,6 +77,9 @@ export default {
                 password_page: false,
             };
         },
+        props: [
+          'login_route',
+        ],
         methods: {
 
             login(){
@@ -93,12 +96,17 @@ export default {
                        "Please enter your password"
                     );
                 } else {
-                     axios.post('auth/submit', data).then(function(response){
-                       if(response.status) {
-                          console.log(data)
-                       }
+                     axios.post(this.login_route, data).then(function(response){
+                        if(response.data.status === true) {
+                          window.location.href = response.data.redirect_url
+                        } else {
+                            this.$toastr.e(
+                              "User not found or your password is mismatch. Please try again."
+                            );
+                            // this.$toastr.e(`${response.data.message}`);
+                        }
                     }).catch(error=>{
-                        console.log("Insert: "+error);
+                        //  this.$toastr.e(error);
                     });
                 }
 
