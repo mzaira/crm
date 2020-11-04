@@ -54,7 +54,7 @@ class HomeController extends Controller
                 $url = '';
 
                 if($user->hasRole('admin')) {
-                    $url = route('admin.index');
+                    $url = route('admin.home');
                 } 
 
                 if($user->hasRole('client')) {
