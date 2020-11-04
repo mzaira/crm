@@ -21,7 +21,7 @@
                 </ol>
               </nav>
             </div>
-            <div class="col-lg-6 col-5 text-right">
+            <div class="col-lg-6 col-5 text-right d-none">
               <a href="#" class="btn btn-sm btn-neutral">New Client</a>
               <a href="#" class="btn btn-sm btn-neutral">New Employee</a>
             </div>
@@ -35,7 +35,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Total Minutes of Meeting</h5>
-                      <span class="h2 font-weight-bold mb-0">350</span>
+                      <span class="h2 font-weight-bold mb-0">0</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
@@ -53,7 +53,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Total Presentations</h5>
-                      <span class="h2 font-weight-bold mb-0">2,356</span>
+                      <span class="h2 font-weight-bold mb-0">1</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
@@ -71,7 +71,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Total Documents</h5>
-                      <span class="h2 font-weight-bold mb-0">924</span>
+                      <span class="h2 font-weight-bold mb-0">0</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
