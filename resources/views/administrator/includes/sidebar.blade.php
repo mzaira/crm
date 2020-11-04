@@ -75,6 +75,14 @@
                     <span class="nav-link-text">Blogs</span>
                   </a>
                 </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('home.logout') }}" >
+                   <i class="ni ni-button-power"></i>
+                   <span class="nav-link-text">Logout</span>
+                 </a>
+               </li>
+               
               </ul>
             </div>
           </div>
