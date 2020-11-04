@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     //
     public function __construct() {
-        $this->middleware('role:administrator');
+        $this->middleware('role:admin');
     }
 
     public function index() {
