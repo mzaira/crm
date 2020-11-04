@@ -40,47 +40,34 @@
                 <div class="card">
                     <img class="card-img-top" src="https://banner2.cleanpng.com/20180531/rtf/kisspng-pdf-computer-icons-information-rpse-5b0fbe63918ea4.4536074215277584355962.jpg" alt="Card image cap">
                     <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">View Document</a>
+                    <h5 class="card-title">Online Marketing Proposal - Noralign</h5>
+                    {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
+                    <a href="{{ asset('uploads/presentations/Online Marketing Proposal-Noralign.pdf') }}" class="btn btn-primary">View Presentation</a>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-3">
-                <div class="card">
-                    <img class="card-img-top" src="https://banner2.cleanpng.com/20180531/rtf/kisspng-pdf-computer-icons-information-rpse-5b0fbe63918ea4.4536074215277584355962.jpg" alt="Card image cap">
-                    <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">View Document</a>
-                    </div>
+              <div class="card">
+                  <img class="card-img-top" src="https://banner2.cleanpng.com/20180531/rtf/kisspng-pdf-computer-icons-information-rpse-5b0fbe63918ea4.4536074215277584355962.jpg" alt="Card image cap">
+                  <div class="card-body">
+                  <h5 class="card-title">SEO Kick Off Presentation</h5>
+                  {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
+                  <a href="{{ asset('uploads/presentations/Noralign -  SEO Kick Off Presentation.pdf') }}" class="btn btn-primary">View Presentation</a>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="https://banner2.cleanpng.com/20180531/rtf/kisspng-pdf-computer-icons-information-rpse-5b0fbe63918ea4.4536074215277584355962.jpg" alt="Card image cap">
+                <div class="card-body">
+                <h5 class="card-title">Paid Ads Presentation</h5>
+                {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
+                <a href="{{ asset('uploads/presentations/Online Marketing Proposal-Noralign.pdf') }}" class="btn btn-primary">View Presentation</a>
                 </div>
             </div>
-
-            <div class="col-md-3">
-                <div class="card">
-                    <img class="card-img-top" src="https://banner2.cleanpng.com/20180531/rtf/kisspng-pdf-computer-icons-information-rpse-5b0fbe63918ea4.4536074215277584355962.jpg" alt="Card image cap">
-                    <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">View Document</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card">
-                    <img class="card-img-top" src="https://banner2.cleanpng.com/20180531/rtf/kisspng-pdf-computer-icons-information-rpse-5b0fbe63918ea4.4536074215277584355962.jpg" alt="Card image cap">
-                    <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">View Document</a>
-                    </div>
-                </div>
-            </div>
-
-
+        </div>
 
         </div>
 

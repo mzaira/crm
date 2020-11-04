@@ -52,7 +52,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                   <a class="nav-link" href="{{ route('home.logout') }}" target="_blank">
+                   <a class="nav-link" href="{{ route('home.logout') }}" >
                     <i class="ni ni-button-power"></i>
                     <span class="nav-link-text">Logout</span>
                   </a>
