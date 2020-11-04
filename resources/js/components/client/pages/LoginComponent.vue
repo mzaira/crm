@@ -83,7 +83,7 @@ export default {
         methods: {
 
             login(){
-
+              
                 let data = this.collection
                 var _this = this
 
@@ -96,20 +96,20 @@ export default {
                        "Please enter your password"
                     );
                 } else {
-                     axios.post(this.login_route, data).then(function(response){
-                        if(response.data.status === true) {
-                          window.location.href = response.data.redirect_url
-                        } else {
-                            this.$toastr.e(
-                              "User not found or your password is mismatch. Please try again."
-                            );
-                            // this.$toastr.e(`${response.data.message}`);
-                        }
+                     axios.post(this.login_route, data).then(function(response) {
+                       window.location.href= response.data.redirect_url
                     }).catch(error=>{
-                        //  this.$toastr.e(error);
+                        this.message(error.response)
                     });
                 }
 
+            },
+
+            message(response) {
+                console.log(response)
+                this.$toastr.e(
+                      "User not found or your password is mismatch. Please try again."
+                  );
             },
 
             forgot_password() {
@@ -119,7 +119,8 @@ export default {
               if(data.email == '') {
                  console.log('required')
               } else {
-                     axios.post('auth/submit', data).then(function(response){
+                     axios.post('auth/submit', data)
+                     .then(function(response){
                        if(response.status) {
                           console.log(data)
                        }

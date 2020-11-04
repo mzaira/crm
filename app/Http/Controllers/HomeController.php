@@ -43,7 +43,7 @@ class HomeController extends Controller
         if(!$user) {
 
             $response = ['status' => 'false', 'message' => 'User not Found'];
-            return Response()->json($response, 200);
+            return Response()->json($response, 404);
 
         } else {
 

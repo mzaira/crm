@@ -1985,6 +1985,8 @@ __webpack_require__.r(__webpack_exports__);
   props: ['login_route'],
   methods: {
     login: function login() {
+      var _this2 = this;
+
       var data = this.collection;
 
       var _this = this;
@@ -1995,14 +1997,15 @@ __webpack_require__.r(__webpack_exports__);
         this.$toastr.e("Please enter your password");
       } else {
         axios.post(this.login_route, data).then(function (response) {
-          if (response.data.status === true) {
-            window.location.href = response.data.redirect_url;
-          } else {
-            this.$toastr.e("User not found or your password is mismatch. Please try again."); // this.$toastr.e(`${response.data.message}`);
-          }
-        })["catch"](function (error) {//  this.$toastr.e(error);
+          window.location.href = response.data.redirect_url;
+        })["catch"](function (error) {
+          _this2.message(error.response);
         });
       }
+    },
+    message: function message(response) {
+      console.log(response);
+      this.$toastr.e("User not found or your password is mismatch. Please try again.");
     },
     forgot_password: function forgot_password() {
       var data = this.password;
@@ -33124,9 +33127,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 
-Vue.use(vue_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], {
-  /* OverWrite Plugin Options if you need */
-});
+Vue.use(vue_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], {});
 Vue.component('login', _components_client_pages_LoginComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
 Vue.component('register', _components_client_pages_RegisterComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]);
 

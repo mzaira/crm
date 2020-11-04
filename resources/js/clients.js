@@ -8,7 +8,6 @@ import register from './components/client/pages/RegisterComponent.vue'
 
 
 Vue.use(VueToastr, {
-    /* OverWrite Plugin Options if you need */
 });
 
 Vue.component('login', login)
