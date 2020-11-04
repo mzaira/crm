@@ -32,7 +32,7 @@
               <i class="ni ni-zoom-split-in"></i>
             </a>
           </li>
-          <li class="nav-item dropdown">
+          {{-- <li class="nav-item dropdown">
             <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="ni ni-bell-55"></i>
             </a>
@@ -187,7 +187,7 @@
                 </a>
               </div>
             </div>
-          </li>
+          </li> --}}
         </ul>
         <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
           <li class="nav-item dropdown">
@@ -197,7 +197,7 @@
                   <img alt="Image placeholder" src="https://via.placeholder.com/150 ">
                 </span>
                 <div class="media-body  ml-2  d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
+                <span class="mb-0 text-sm  font-weight-bold">{{ Auth()->User()->name }}</span>
                 </div>
               </div>
             </a>
