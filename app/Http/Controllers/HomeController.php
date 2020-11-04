@@ -41,13 +41,17 @@ class HomeController extends Controller
         $user = User::where('email', $this->request->email)->first();
 
         if(!$user) {
+
             $response = ['status' => 'false', 'message' => 'User not Found'];
             return Response()->json($response, 200);
+
         } else {
 
             $credentials = $this->request->only('email', 'password');
 
             if (Auth::attempt($credentials)) {
+
+                $url = '';
 
                 if($user->hasRole('admin')) {
                     $url = route('admin.index');
