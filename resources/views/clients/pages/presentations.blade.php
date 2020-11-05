@@ -64,7 +64,7 @@
                 <div class="card-body">
                 <h5 class="card-title">Paid Ads Presentation</h5>
                 {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
-                <a target="_blank" href="{{ asset('uploads/presentations/Online Marketing Proposal-Noralign.pdf') }}" class="btn btn-primary">View Presentation</a>
+                <a target="_blank" href="{{ asset('uploads/presentations/Noralign -  Paid Ads Presentation-version-2.pdf') }}" class="btn btn-primary">View Presentation</a>
                 </div>
             </div>
         </div>
