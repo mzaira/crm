@@ -35,7 +35,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Total Minutes of Meeting</h5>
-                      <span class="h2 font-weight-bold mb-0">0</span>
+                      <span class="h2 font-weight-bold mb-0">1</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
@@ -53,7 +53,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Total Presentations</h5>
-                      <span class="h2 font-weight-bold mb-0">3</span>
+                      <span class="h2 font-weight-bold mb-0">4</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
