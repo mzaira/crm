@@ -1929,75 +1929,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -30637,90 +30568,15 @@ var staticRenderFns = [
             _c("tr", [
               _c("th", { attrs: { scope: "col" } }, [_vm._v("Name")]),
               _vm._v(" "),
-              _c("th", { attrs: { scope: "col" } }, [_vm._v("Visitors")]),
+              _c("th", { attrs: { scope: "col" } }, [_vm._v("Projects")]),
               _vm._v(" "),
-              _c("th", { attrs: { scope: "col" } }, [_vm._v("Unique users")]),
+              _c("th", { attrs: { scope: "col" } }, [_vm._v("Date Added")]),
               _vm._v(" "),
-              _c("th", { attrs: { scope: "col" } }, [_vm._v("Bounce rate")])
+              _c("th", { attrs: { scope: "col" } }, [_vm._v("Action")])
             ])
           ]),
           _vm._v(" "),
-          _c("tbody", [
-            _c("tr", [
-              _c("th", { attrs: { scope: "row" } }, [
-                _vm._v("\n                /argon/\n              ")
-              ]),
-              _vm._v(" "),
-              _c("td", [_vm._v("\n                4,569\n              ")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("\n                340\n              ")]),
-              _vm._v(" "),
-              _c("td", [
-                _c("i", { staticClass: "fas fa-arrow-up text-success mr-3" }),
-                _vm._v(" 46,53%\n              ")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("th", { attrs: { scope: "row" } }, [
-                _vm._v("\n                /argon/index.html\n              ")
-              ]),
-              _vm._v(" "),
-              _c("td", [_vm._v("\n                3,985\n              ")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("\n                319\n              ")]),
-              _vm._v(" "),
-              _c("td", [
-                _c("i", { staticClass: "fas fa-arrow-down text-warning mr-3" }),
-                _vm._v(" 46,53%\n              ")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("th", { attrs: { scope: "row" } }, [
-                _vm._v("\n                /argon/charts.html\n              ")
-              ]),
-              _vm._v(" "),
-              _c("td", [_vm._v("\n                3,513\n              ")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("\n                294\n              ")]),
-              _vm._v(" "),
-              _c("td", [
-                _c("i", { staticClass: "fas fa-arrow-down text-warning mr-3" }),
-                _vm._v(" 36,49%\n              ")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("th", { attrs: { scope: "row" } }, [
-                _vm._v("\n                /argon/tables.html\n              ")
-              ]),
-              _vm._v(" "),
-              _c("td", [_vm._v("\n                2,050\n              ")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("\n                147\n              ")]),
-              _vm._v(" "),
-              _c("td", [
-                _c("i", { staticClass: "fas fa-arrow-up text-success mr-3" }),
-                _vm._v(" 50,87%\n              ")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("th", { attrs: { scope: "row" } }, [
-                _vm._v("\n                /argon/profile.html\n              ")
-              ]),
-              _vm._v(" "),
-              _c("td", [_vm._v("\n                1,795\n              ")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("\n                190\n              ")]),
-              _vm._v(" "),
-              _c("td", [
-                _c("i", { staticClass: "fas fa-arrow-down text-danger mr-3" }),
-                _vm._v(" 46,53%\n              ")
-              ])
-            ])
-          ])
+          _c("tbody")
         ])
       ])
     ])

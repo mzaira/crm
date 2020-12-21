@@ -1997,7 +1997,13 @@ __webpack_require__.r(__webpack_exports__);
         this.$toastr.e("Please enter your password");
       } else {
         axios.post(this.login_route, data).then(function (response) {
-          window.location.href = response.data.redirect_url;
+          console.log(response);
+
+          if (response.data.status) {
+            window.location.href = response.data.redirect_url;
+          } else {
+            this.$toastr.e("Email and Password is not Match");
+          }
         })["catch"](function (error) {
           _this2.message(error.response);
         });

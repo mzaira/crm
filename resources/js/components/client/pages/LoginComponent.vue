@@ -97,7 +97,15 @@ export default {
                     );
                 } else {
                      axios.post(this.login_route, data).then(function(response) {
-                       window.location.href= response.data.redirect_url
+                       console.log(response)
+
+                      if(response.data.status) {
+                         window.location.href= response.data.redirect_url
+                      } else {
+                          this.$toastr.e(
+                              "Email and Password is not Match"
+                          );
+                      }
                     }).catch(error=>{
                         this.message(error.response)
                     });
