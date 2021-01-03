@@ -27,7 +27,7 @@ class HomeController extends Controller
     }
 
     public function client_page() {
-        $meta = array('active' => 'client', 'title' => 'Client', 'users' => User::all());
+        $meta = array('active' => 'client', 'title' => 'Client', 'users' => User::where('role', 3)->get());
         return view('administrator.pages.client', $meta);
     }
 

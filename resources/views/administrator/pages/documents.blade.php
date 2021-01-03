@@ -43,7 +43,7 @@
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
               <tr>
-                <th scope="col">Name</th>
+                <th scope="col">Title</th>
                 <th scope="col">Description</th>
                 <th scope="col">Client Name</th>
                 <th scope="col text-right">Action</th>
@@ -91,8 +91,8 @@
             <div class="modal-body">
               <form id="form_document" action="javascript:;" method="post">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Name</label>
-                  <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+                  <label for="exampleInputEmail1">Title</label>
+                  <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Description</label>
@@ -125,9 +125,11 @@
 @endsection
 
 @section('js')
+
 <link rel="stylesheet" href="{{ asset('src/css/fineuploader.css') }}">
 <script src="{{ asset('src/js/administrator.js') }}"></script>
 <script src="{{ asset('src/js/fine-uploader.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <script>
 
@@ -143,26 +145,67 @@ $(function() {
 
   $('#btn_save_document').click(function() {
     
-      var form = $('#form_document').serialize();
+      var client_name = $('#exampleFormControlSelect2').find('option:selected').text();
+      var form = $('#form').serialize();
       var $this = $(this);
-      
-      $.ajax({
-        type: 'POST',
-        url: CREATE_DOCUMENT,
-        data: form,
-        headers: {
-             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+
+      const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
         },
-        error: function() {
-        },
-        success: function(data) {
-           $this.removeAttr('disabled', 'disabled').html('Save');
-           window.location.reload();
-        },
-        beforeSend: function() {
-           $this.attr('disabled', 'disabled').html('Please Wait..');
+        buttonsStyling: false
+      })
+
+      swalWithBootstrapButtons.fire({
+        title: client_name,
+        text: "Are you sure you want to add the file for:",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, Save it!',
+        cancelButtonText: 'No, cancel!',
+        reverseButtons: true
+      }).then((result) => {
+
+        if (result.isConfirmed) {
+
+            $.ajax({
+                type: 'POST',
+                url: CREATE,
+                data: form,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                error: function() {
+                },
+                success: function(data) {
+
+                  swalWithBootstrapButtons.fire(
+                    'ADDED!',
+                    'Your file has been ADDED.',
+                    'success'
+                  )
+                  
+                  $this.removeAttr('disabled', 'disabled').html('Save');
+                  window.location.reload();
+                },
+                beforeSend: function() {
+                  $this.attr('disabled', 'disabled').html('Please Wait..');
+                }
+            });
+        
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          // swalWithBootstrapButtons.fire(
+          //   'Cancelled',
+          //   'Your imaginary file is safe :)',
+          //   'error'
+          // )
         }
-      });
+      })
+
 
   });
 

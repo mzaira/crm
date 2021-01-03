@@ -90,7 +90,7 @@
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Add Employee</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Add Client</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -112,9 +112,9 @@
                 <div class="form-group">
                   <label for="exampleInputPassword1">Role</label>
                       <select class="form-control" name="role" id="exampleFormControlSelect2">
-                            <option value="1">Administrator</option>
-                            <option value="2">Employee</option>
-                            <option value="3">Client</option>
+                            <option value="1" disabled="disabled">Administrator</option>
+                            <option value="2" disabled="disabled">Employee</option>
+                            <option value="3" selected>Client</option>
                       </select>          
                   </div>
          

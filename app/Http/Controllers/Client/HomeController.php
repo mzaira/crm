@@ -23,9 +23,9 @@ class HomeController extends Controller
         $meta = [
                 'active' => 'dashboard', 
                 'title' => 'My Dashboard',
-                'total_presentation' => Presentations::count(),
-                'total_minutes' => MeetingMinutes::count(),
-                'total_documents' => Documents::count()
+                'total_presentation' => Presentations::where('client_id', Auth::User()->id)->count(),
+                'total_minutes' => MeetingMinutes::where('client_id', Auth::User()->id)->count(),
+                'total_documents' => Documents::where('client_id', Auth::User()->id)->count()
             ];
         return view('clients.pages.index', $meta);
     }

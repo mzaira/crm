@@ -42,7 +42,7 @@
                         <img class="card-img-top" src="https://banner2.cleanpng.com/20180531/rtf/kisspng-pdf-computer-icons-information-rpse-5b0fbe63918ea4.4536074215277584355962.jpg" alt="Card image cap">
                         <div class="card-body">
                         <h5 class="card-title">{{ $item->name }}</h5>
-                        <a target="_blank" href="{{ asset('documents') }}/{{ $item->attachment }}" class="btn btn-primary">View Presentation</a>
+                        <a target="_blank" href="{{ asset('documents') }}/{{ $item->attachment }}" class="btn btn-primary">View Document</a>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
           @else
             <div class="col-md-12">
                 <div class="jumbotron">
-                  <h1 class="display-4">Oops, it seem's you dont have documents yet. </h1>
+                  <h1 class="display-4">Oops, it seem's you dont have files yet. </h1>
                   <hr class="my-4">
                   <p>If you believe that this is an error, please contact us.</p>
                   <a class="btn btn-primary btn-lg" href="mailto:info@creativouae.com" role="button">Send an Email</a>
