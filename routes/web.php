@@ -13,14 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//    return redirect(route('home.login'));
-// });
 
 Route::get('/login', function() {
    return redirect(route('home.login'));
 });
-
 
 Route::get('register','HomeController@register')->name('home.register');
 Route::get('/','HomeController@login')->name('home.login');
@@ -55,14 +51,20 @@ Route::prefix('administrator')->namespace('Administrator')->group(function() {
 
    Route::prefix('documents')->group(function() {
       Route::get('/', 'HomeController@document_page')->name('admin.documents');
+      Route::post('/', 'HomeController@save_document')->name('admin.save_document');
+      Route::post('upload', 'HomeController@upload_document')->name('admin.upload_document');
    });
 
    Route::prefix('meeting_minutes')->group(function() {
       Route::get('/', 'HomeController@meeting_minutes_page')->name('admin.meeting_minutes_page');
+      Route::post('/', 'HomeController@save_minutes')->name('admin.save_minutes');
+      Route::post('upload', 'HomeController@upload_minutes')->name('admin.upload_minutes');
    });
 
    Route::prefix('presentations')->group(function() {
       Route::get('/', 'HomeController@presentation_page')->name('admin.presentations');
+      Route::post('/', 'HomeController@save_presentation')->name('admin.save_presentation');
+      Route::post('upload', 'HomeController@upload_presentation')->name('admin.upload_presentation');
    });
 
 

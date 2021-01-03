@@ -37,7 +37,6 @@
     <div class="container-fluid ">
 
         <div class="row">
-
           <div class="table-responsive">
             <!-- Projects table -->
             <table class="table align-items-center table-flush">
@@ -123,16 +122,13 @@
               </tbody>
             </table>
           </div>
-
-
         </div>
-
-        
-
-
 
       <!-- Footer -->
       @include('administrator.includes.footer')
     </div>
+
+
+
   </div>
 @endsection

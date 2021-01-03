@@ -35,19 +35,28 @@
     <div class="container-fluid mt--6">
 
         <div class="row">
-
-          <div class="col-md-12">
-            {{-- <div class="row"> --}}
-              <div class="jumbotron">
-                <h1 class="display-4">Oops, it seem's you dont have documents yet. </h1>
-                {{-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> --}}
-                <hr class="my-4">
-                <p>If you believe that this is an error, please contact us.</p>
-                <a class="btn btn-primary btn-lg" href="mailto:info@creativouae.com" role="button">Send an Email</a>
-            {{-- </div> --}}
-             </div>
-          </div>
-
+          @if ($files)
+            @foreach ($files as $item)
+                <div class="col-md-3">
+                    <div class="card">
+                        <img class="card-img-top" src="https://banner2.cleanpng.com/20180531/rtf/kisspng-pdf-computer-icons-information-rpse-5b0fbe63918ea4.4536074215277584355962.jpg" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">{{ $item->name }}</h5>
+                        <a target="_blank" href="{{ asset('presentations') }}/{{ $item->attachment }}" class="btn btn-primary">View Presentation</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+          @else
+            <div class="col-md-12">
+                <div class="jumbotron">
+                  <h1 class="display-4">Oops, it seem's you dont have documents yet. </h1>
+                  <hr class="my-4">
+                  <p>If you believe that this is an error, please contact us.</p>
+                  <a class="btn btn-primary btn-lg" href="mailto:info@creativouae.com" role="button">Send an Email</a>
+              </div>
+            </div>
+          @endif
 
         </div>
 

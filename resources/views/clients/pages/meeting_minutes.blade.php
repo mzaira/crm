@@ -27,7 +27,6 @@
             </div>
           </div>
           <!-- Card stats -->
-       
         </div>
       </div>
     </div>
@@ -37,26 +36,30 @@
 
         <div class="row">
 
-              <div class="col-md-3">
-                <div class="card">
-                    <img class="card-img-top" src="https://banner2.cleanpng.com/20180531/rtf/kisspng-pdf-computer-icons-information-rpse-5b0fbe63918ea4.4536074215277584355962.jpg" alt="Card image cap">
-                    <div class="card-body">
-                    <h5 class="card-title">Meeting Minutes - November 5, 2020</h5>
-                    {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
-                    <a target="_blank" href="{{ asset('uploads/meeting_minutes/4 November 2020 - Noralign- Meeting Minutes.pdf') }}" class="btn btn-primary">View Meeting Minutes</a>
-                    </div>
-                </div>
-            </div>
+          @if ($files->count() > 0)
 
-            <div class="col-md-12" style="display: none">
+          @foreach ($files as $item)
+              <div class="col-md-3">
+                  <div class="card">
+                      <img class="card-img-top" src="https://banner2.cleanpng.com/20180531/rtf/kisspng-pdf-computer-icons-information-rpse-5b0fbe63918ea4.4536074215277584355962.jpg" alt="Card image cap">
+                      <div class="card-body">
+                      <h5 class="card-title">{{ $item->name }}</h5>
+                      <a target="_blank" href="{{ asset('presentations') }}/{{ $item->attachment }}" class="btn btn-primary">View Presentation</a>
+                      </div>
+                  </div>
+              </div>
+          @endforeach
+          @else
+            <div class="col-md-12">
                 <div class="jumbotron">
-                  <h1 class="display-4">Oops, it seem's you dont have meeting minutes yet. </h1>
-                  {{-- <p class="lead">This area</p> --}}
+                  <h1 class="display-4">Oops, it seem's you dont have documents yet. </h1>
                   <hr class="my-4">
                   <p>If you believe that this is an error, please contact us.</p>
                   <a class="btn btn-primary btn-lg" href="mailto:info@creativouae.com" role="button">Send an Email</a>
               </div>
             </div>
+          @endif
+     
 
         </div>
 

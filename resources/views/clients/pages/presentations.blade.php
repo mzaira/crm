@@ -36,52 +36,30 @@
 
         <div class="row">
 
-            <div class="col-md-3">
-                <div class="card">
-                    <img class="card-img-top" src="https://banner2.cleanpng.com/20180531/rtf/kisspng-pdf-computer-icons-information-rpse-5b0fbe63918ea4.4536074215277584355962.jpg" alt="Card image cap">
-                    <div class="card-body">
-                    <h5 class="card-title">Online Marketing Proposal - Noralign</h5>
-                    {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
-                    <a target="_blank" href="{{ asset('uploads/presentations/Online Marketing Proposal-Noralign.pdf') }}" class="btn btn-primary">View Presentation</a>
-                    </div>
-                </div>
-            </div>
+          @if ($files->count() > 0)
 
-            <div class="col-md-3">
-              <div class="card">
-                  <img class="card-img-top" src="https://banner2.cleanpng.com/20180531/rtf/kisspng-pdf-computer-icons-information-rpse-5b0fbe63918ea4.4536074215277584355962.jpg" alt="Card image cap">
-                  <div class="card-body">
-                  <h5 class="card-title">SEO Kick Off Presentation</h5>
-                  {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
-                  <a target="_blank" href="{{ asset('uploads/presentations/Noralign -  SEO Kick Off Presentation.pdf') }}" class="btn btn-primary">View Presentation</a>
+          @foreach ($files as $item)
+              <div class="col-md-3">
+                  <div class="card">
+                      <img class="card-img-top" src="https://banner2.cleanpng.com/20180531/rtf/kisspng-pdf-computer-icons-information-rpse-5b0fbe63918ea4.4536074215277584355962.jpg" alt="Card image cap">
+                      <div class="card-body">
+                      <h5 class="card-title">{{ $item->name }}</h5>
+                      <a target="_blank" href="{{ asset('presentations') }}/{{ $item->attachment }}" class="btn btn-primary">View Presentation</a>
+                      </div>
                   </div>
               </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="card">
-                <img class="card-img-top" src="https://banner2.cleanpng.com/20180531/rtf/kisspng-pdf-computer-icons-information-rpse-5b0fbe63918ea4.4536074215277584355962.jpg" alt="Card image cap">
-                <div class="card-body">
-                <h5 class="card-title">Paid Ads Presentation</h5>
-                {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
-                <a target="_blank" href="{{ asset('uploads/presentations/Noralign -  Paid Ads Presentation-version-2.pdf') }}" class="btn btn-primary">View Presentation</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-md-3">
-          <div class="card">
-              <img class="card-img-top" src="https://banner2.cleanpng.com/20180531/rtf/kisspng-pdf-computer-icons-information-rpse-5b0fbe63918ea4.4536074215277584355962.jpg" alt="Card image cap">
-              <div class="card-body">
-              <h5 class="card-title">November - SEO Report</h5>
-              {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
-              <a target="_blank" href="{{ asset('uploads/presentations/Noralign -  SEO Report - November.pdf') }}" class="btn btn-primary">View Presentation</a>
+          @endforeach
+          @else
+            <div class="col-md-12">
+                <div class="jumbotron">
+                  <h1 class="display-4">Oops, it seem's you dont have documents yet. </h1>
+                  <hr class="my-4">
+                  <p>If you believe that this is an error, please contact us.</p>
+                  <a class="btn btn-primary btn-lg" href="mailto:info@creativouae.com" role="button">Send an Email</a>
               </div>
-          </div>
-      </div>
-
-        
+            </div>
+          @endif
+     
 
         </div>
 

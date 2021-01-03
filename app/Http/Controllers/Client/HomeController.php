@@ -5,6 +5,13 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Models\MeetingMinutes;
+use App\Models\Presentations;
+use App\Models\Documents;
+use App\Models\User;
+
 class HomeController extends Controller
 {
 
@@ -18,17 +25,29 @@ class HomeController extends Controller
     }
 
     public function presentations() {
-        $meta = ['active' => 'presentations', 'title' => 'My Presentation'];
+        $meta = [
+                'active' => 'presentations', 
+                'title' => 'My Presentation',
+                'files' => Presentations::where('client_id', Auth::User()->id)->get(),
+                 ];
         return view('clients.pages.presentations', $meta);
     }
 
     public function meeting_minutes() {
-        $meta = ['active' => 'meeting_minutes', 'title' => 'My Meeting Minutes'];
+        $meta = [
+                 'active' => 'meeting_minutes', 
+                 'title' => 'My Meeting Minutes',
+                 'files' => MeetingMinutes::where('client_id', Auth::User()->id)->get(),
+                ];
         return view('clients.pages.meeting_minutes', $meta);
     }
 
     public function documents() {
-        $meta = ['active' => 'documents', 'title' => 'My Documents'];
+        $meta = [
+            'active' => 'documents', 
+            'title' => 'My Documents',
+            'files' => Documents::where('client_id', Auth::User()->id)->get(),
+        ];
         return view('clients.pages.documents', $meta);
     }
 

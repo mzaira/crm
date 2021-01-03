@@ -36,8 +36,12 @@ mix.babel([
 // administrator
 mix.styles([
     'resources/dashboard/assets/vendor/nucleo/css/nucleo.css',
+    'resources/dashboard/assets/vendor/dropzone/dist/dropzone.css',
     'resources/dashboard/assets/css/argon.css',
 ], 'public/src/css/dashboard.css').version();
+
+
+
 
 
 mix.babel([
@@ -49,3 +53,18 @@ mix.babel([
     'resources/dashboard/assets/vendor/chart.js/dist/Chart.extension.js',
     'resources/dashboard/assets/js/argon.js',
 ], 'public/src/js/dashboard.js').version();
+
+
+mix.babel('resources/dashboard/assets/vendor/dropzone/dist/dropzone.js',
+      'public/src/js/dropzone.js')
+.version();
+
+mix.styles(['resources/vendors/uploader/fine-uploader-new.css',
+          'resources/vendors/uploader/fine-uploader.min.css'],
+           'public/src/css/fineuploader.css').version();
+
+mix.babel('resources/vendors/uploader/jquery.fine-uploader.js',
+'public/src/js/fine-uploader.js')
+.version();
+
+
