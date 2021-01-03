@@ -42,7 +42,7 @@
                         <img class="card-img-top" src="https://banner2.cleanpng.com/20180531/rtf/kisspng-pdf-computer-icons-information-rpse-5b0fbe63918ea4.4536074215277584355962.jpg" alt="Card image cap">
                         <div class="card-body">
                         <h5 class="card-title">{{ $item->name }}</h5>
-                        <a target="_blank" href="{{ asset('presentations') }}/{{ $item->attachment }}" class="btn btn-primary">View Presentation</a>
+                        <a target="_blank" href="{{ asset('documents') }}/{{ $item->attachment }}" class="btn btn-primary">View Presentation</a>
                         </div>
                     </div>
                 </div>
