@@ -20,7 +20,13 @@ class HomeController extends Controller
     }
     //
     public function index() {
-        $meta = ['active' => 'dashboard', 'title' => 'My Dashboard'];
+        $meta = [
+                'active' => 'dashboard', 
+                'title' => 'My Dashboard',
+                'total_presentation' => Presentations::count(),
+                'total_minutes' => MeetingMinutes::count(),
+                'total_documents' => Documents::count()
+            ];
         return view('clients.pages.index', $meta);
     }
 

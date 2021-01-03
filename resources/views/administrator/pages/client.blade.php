@@ -90,7 +90,7 @@
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Add Document</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Add Employee</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -99,14 +99,18 @@
               <form id="form_document" action="javascript:;" method="post">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Name</label>
-                  <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+                  <input type="text" name="fullname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email</label>
+                  <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="text" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Description">
+                  <input type="text" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Client</label>
+                  <label for="exampleInputPassword1">Role</label>
                       <select class="form-control" name="role" id="exampleFormControlSelect2">
                             <option value="1">Administrator</option>
                             <option value="2">Employee</option>
@@ -115,10 +119,10 @@
                   </div>
          
                   <input type="hidden" name="attachment" id="attachment">
-                <button type="submit" class="btn btn-primary" id="btn_save_document">Submit</button>
+                <button type="submit" class="btn btn-primary" id="create_user">Submit</button>
               </form>
              </div>
-            </div>
+          </div>
             {{-- <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div> --}}
@@ -128,4 +132,41 @@
     </div>
 
   </div>
+@endsection
+
+
+@section('js')
+
+<script src="{{ asset('src/js/administrator.js') }}"></script>
+
+<script>
+const CREATE = '{{ route('register.submit') }}'
+
+$('#create_user').click(function() {
+    
+    var form = $('#form_document').serialize();
+    var $this = $(this);
+    
+    $.ajax({
+      type: 'POST',
+      url: CREATE,
+      data: form,
+      headers: {
+           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      error: function() {
+      },
+      success: function(data) {
+         window.location.reload();
+         $this.removeAttr('disabled', 'disabled').html('Save');
+      },
+      beforeSend: function() {
+         $this.attr('disabled', 'disabled').html('Please Wait..');
+      }
+    });
+
+});
+
+</script>
+
 @endsection

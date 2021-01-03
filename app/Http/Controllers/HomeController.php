@@ -78,11 +78,28 @@ class HomeController extends Controller
         $user->name = $this->request->fullname;
         $user->email = $this->request->email;
         $user->password = Hash::make($this->request->password);
-        $user->role = 3;
-
+        $user->role = $this->request->role;
+      
         if($user->save()) {
-            $user->attachRole('client');
+     
+            switch ($this->request->role) {
+
+                case "1":
+                    $user->attachRole('admin');
+                break;
+
+                case "2":
+                     $user->attachRole('employee');
+                break;
+
+                case "3":
+                    $user->attachRole('client');
+                break;
+             
+            }
+
             $status = true;
+
         }
 
         $response = array('status' => $status);

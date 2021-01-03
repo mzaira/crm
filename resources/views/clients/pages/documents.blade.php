@@ -35,7 +35,7 @@
     <div class="container-fluid mt--6">
 
         <div class="row">
-          @if ($files)
+          @if (count($files) > 0)
             @foreach ($files as $item)
                 <div class="col-md-3">
                     <div class="card">
