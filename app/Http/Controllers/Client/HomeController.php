@@ -32,18 +32,18 @@ class HomeController extends Controller
 
     public function presentations() {
         $meta = [
-                'active' => 'presentations', 
-                'title' => 'My Presentation',
-                'files' => Presentations::where('client_id', Auth::User()->id)->get(),
+                    'active' => 'presentations', 
+                    'title' => 'My Presentation',
+                    'files' => Presentations::where('client_id', Auth::User()->id)->get(),
                  ];
         return view('clients.pages.presentations', $meta);
     }
 
     public function meeting_minutes() {
         $meta = [
-                 'active' => 'meeting_minutes', 
-                 'title' => 'My Meeting Minutes',
-                 'files' => MeetingMinutes::where('client_id', Auth::User()->id)->get(),
+                    'active' => 'meeting_minutes', 
+                    'title' => 'My Meeting Minutes',
+                    'files' => MeetingMinutes::where('client_id', Auth::User()->id)->get(),
                 ];
         return view('clients.pages.meeting_minutes', $meta);
     }

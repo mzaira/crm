@@ -52,7 +52,7 @@ class HomeController extends Controller
         $meta = array(
             'active' => 'meeting_minutes', 
             'title' => 'Meeting Minutes',
-            'meeting_minutes' => MeetingMinutes::all(),
+            'meeting_minutes' => MeetingMinutes::leftjoin('users', 'users.id','meeting_minutes.client_id')->select('users.name as client_name', 'meeting_minutes.name as filename', 'meeting_minutes.description as filename_desc')->get(),
             'users' => User::where('role', 3)->get(),
         );
         return view('administrator.pages.meeting_minutes', $meta);
@@ -100,7 +100,7 @@ class HomeController extends Controller
         $meta = array(
                 'active' => 'presentations', 
                 'title' => 'Presentations',
-                'presentations' => Presentations::all(),
+                'presentations' => Presentations::leftjoin('users', 'users.id','presentation.client_id')->select('users.name as client_name', 'presentation.name as filename', 'presentation.description as filename_desc')->get(),
                 'users' => User::where('role', 3)->get(),
             );
         return view('administrator.pages.presentations', $meta);
@@ -151,7 +151,8 @@ class HomeController extends Controller
         $meta = array('active' => 'document', 
             'title' => 'Document', 
             'users' => User::where('role', 3)->get(),
-            'documents' => Documents::all()
+            'documents' => Documents::leftjoin('users', 'users.id','documents.client_id')->select('users.name as client_name', 'documents.name as filename', 'documents.description as filename_desc')->get(),
+
         );
         return view('administrator.pages.documents', $meta);
     }     

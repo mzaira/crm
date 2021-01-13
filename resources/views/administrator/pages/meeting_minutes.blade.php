@@ -52,11 +52,9 @@
             <tbody>
               @foreach ($meeting_minutes as $item)
                 <tr>
-                  <th scope="row"> {{ $item->name }} </th>
-                  <td> {{ $item->description }}</td>
-                  <td>  {{ $item->client_id }} </td>
-               
-
+                  <th scope="row"> {{ $item->filename }} </th>
+                  <td> {{ $item->filename_desc }}</td>
+                  <td>  {{ $item->client_name }} </td>
                 <td class="">
                   <div class="dropdown">
                       <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
