@@ -46,7 +46,7 @@
                         <h3 class="card-title">
                           {{ $item->name }} <br/>
                           <small>{{ $item->description }}</small> <br>
-                          <small>{{ date("F j, Y", strtotime( $item->meeting_date)) }}</small>
+                          {{-- <small>{{ date("F j, Y", strtotime( $item->meeting_date)) }}</small> --}}
                         </h3>                      <a target="_blank" href="{{ asset('presentation') }}/{{ $item->attachment }}" class="btn btn-primary">View Presentation</a>
                       </div>
                   </div>
