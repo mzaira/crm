@@ -1,11 +1,11 @@
 {
-    "/src/js/administrator.js": "/src/js/administrator.js?id=fccd0fa7c8c87dc3b0a4",
-    "/src/js/app.js": "/src/js/app.js?id=ffe76a4526605ec1d771",
-    "/src/css/home.css": "/src/css/home.css?id=ca2eb5d52225e30ae1ee",
-    "/src/js/home.js": "/src/js/home.js?id=6785a067e3c1c965b10e",
-    "/src/css/dashboard.css": "/src/css/dashboard.css?id=403f10370f7361c38661",
-    "/src/js/dashboard.js": "/src/js/dashboard.js?id=6ac1bfd9c5db10b47379",
-    "/src/js/dropzone.js": "/src/js/dropzone.js?id=f343ae38dbd81cc37ac9",
-    "/src/css/fineuploader.css": "/src/css/fineuploader.css?id=f10e3a502b25862010b6",
-    "/src/js/fine-uploader.js": "/src/js/fine-uploader.js?id=1df2b73ca1602e143b3a"
+    "/resources/js/admin/client.js": "/resources/js/admin/client.js?id=2ae6dddd803ef5ef8748",
+    "/src/js/app.js": "/src/js/app.js?id=325a84a8cf1eb14b6f1a",
+    "/src/css/home.css": "/src/css/home.css?id=7f3429ec9eef6e786138",
+    "/src/js/home.js": "/src/js/home.js?id=0fdda2450fb66338c31c",
+    "/src/css/dashboard.css": "/src/css/dashboard.css?id=ea8210a82aebaec60a2f",
+    "/src/js/dashboard.js": "/src/js/dashboard.js?id=3072049b8d1a6cf7ca2e",
+    "/src/js/dropzone.js": "/src/js/dropzone.js?id=015548ed3b4fdc0d9f20",
+    "/src/css/fineuploader.css": "/src/css/fineuploader.css?id=204214b69b096d8dc213",
+    "/src/js/fine-uploader.js": "/src/js/fine-uploader.js?id=eef076ecdea10de3ba75"
 }

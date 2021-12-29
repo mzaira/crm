@@ -39,86 +39,18 @@
         <div class="row">
           <div class="table-responsive">
             <!-- Projects table -->
-            <table class="table align-items-center table-flush">
+            <table id="employee_table" class="table align-items-center table-flush">
               <thead class="thead-light">
                 <tr>
+                  <th scope="col">ID</th>
                   <th scope="col">Name</th>
-                  <th scope="col">Visitors</th>
-                  <th scope="col">Unique users</th>
-                  <th scope="col">Bounce rate</th>
+                  <th scope="col">Email Address</th>
+                  <th scope="col">Date Created</th>
+                  <th scope="col text-right">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">
-                    /argon/
-                  </th>
-                  <td>
-                    4,569
-                  </td>
-                  <td>
-                    340
-                  </td>
-                  <td>
-                    <i class="fas fa-arrow-up text-success mr-3"></i> 46,53%
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    /argon/index.html
-                  </th>
-                  <td>
-                    3,985
-                  </td>
-                  <td>
-                    319
-                  </td>
-                  <td>
-                    <i class="fas fa-arrow-down text-warning mr-3"></i> 46,53%
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    /argon/charts.html
-                  </th>
-                  <td>
-                    3,513
-                  </td>
-                  <td>
-                    294
-                  </td>
-                  <td>
-                    <i class="fas fa-arrow-down text-warning mr-3"></i> 36,49%
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    /argon/tables.html
-                  </th>
-                  <td>
-                    2,050
-                  </td>
-                  <td>
-                    147
-                  </td>
-                  <td>
-                    <i class="fas fa-arrow-up text-success mr-3"></i> 50,87%
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    /argon/profile.html
-                  </th>
-                  <td>
-                    1,795
-                  </td>
-                  <td>
-                    190
-                  </td>
-                  <td>
-                    <i class="fas fa-arrow-down text-danger mr-3"></i> 46,53%
-                  </td>
-                </tr>
+                <!-- Data Table-->
               </tbody>
             </table>
           </div>
@@ -131,4 +63,113 @@
 
 
   </div>
+@endsection
+
+@section('js')
+    <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('src/js/administrator.js') }}"></script>
+    
+    <script>
+
+        const CREATE_EMPLOYEE_ROUTE = '{{ route('register.submit') }}'
+        const GET_EMPLOYEE_ROUTE = '{{ route('admin.api.get_employees') }}'
+        const VIEW_EMPLOYEE_ROUTE = '{{ route('admin.view.employee') }}'
+
+        const clients = {
+
+          delete: function(employee_id) {
+            console.log(employee_id)
+
+            Swal.fire({
+              icon: 'warning',
+              title: 'Are you sure you want to delete this client?',
+              showCancelButton: true,
+              confirmButtonText: 'Yes',
+            }).then((result) => {
+              /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                  Swal.fire('Saved!', '', 'success')
+                } else if (result.isDenied) {
+                  Swal.fire('Changes are not saved', '', 'info')
+                }
+            })
+          },
+          manage: function(employee_id) {
+            window.location.href = `${VIEW_EMPLOYEE_ROUTE}/${employee_id}`
+          }
+
+        }
+
+        $("#employee_table").DataTable({
+
+          processing: true,
+          serverSide: true,
+          ajax: GET_EMPLOYEE_ROUTE,
+          headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+          },
+          order: [[0, "desc"]],
+          columns: [
+            {
+              data: "id",
+              visible: false,
+            },
+            {
+              data: "name",
+            },
+            {
+              data: "email",
+            },
+            {
+              data: "created_at"
+            }
+          ],
+          columnDefs: [
+            {
+              render: function(id, type, row) {
+                /* let manage = `<a href="javascript:;" onclick="clients.manage(${row['id']})" class="btn btn-square btn-info btn-xs type="button"  title=""> Manage </a>`
+                let deletes = `<a href="javascript:;" onclick="clients.delete(${row['id']})" class="btn btn-square btn-danger btn-xs" type="button" title=""> Delete </a> `
+                return  manage +' '+ deletes */
+                let action = `<div class="dropdown">
+                    <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-sm btn-icon-only text-light"><i class="fas fa-ellipsis-v"></i></a> 
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                      <a href="javascript:;" onclick="clients.manage(${row['id']})" class="dropdown-item">Edit</a>
+                      <a href="javascript:;" onclick="clients.delete(${row['id']})" class="dropdown-item">Delete</a> 
+                    </div>
+                  </div>`
+                return action
+              },
+              targets: 4,
+            },
+          ],
+        });
+
+        $('#create_user').click(function() {
+            
+            var form = $('#form_document').serialize();
+            var $this = $(this);
+            
+            $.ajax({
+              type: 'POST',
+              url: CREATE_EMPLOYEE_ROUTE,
+              data: form,
+              headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              },
+              error: function() {
+              },
+              success: function(data) {
+                window.location.reload();
+                $this.removeAttr('disabled', 'disabled').html('Save');
+              },
+              beforeSend: function() {
+                $this.attr('disabled', 'disabled').html('Please Wait..');
+              }
+            });
+
+        });
+
+</script>
+
 @endsection

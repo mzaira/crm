@@ -12,6 +12,8 @@ use App\Models\Presentations;
 use App\Models\Documents;
 use App\Models\User;
 
+use DataTables;
+
 class HomeController extends Controller
 {
     public $request;
@@ -31,9 +33,29 @@ class HomeController extends Controller
         return view('administrator.pages.client', $meta);
     }
 
+    public function get_clients(){
+        return Datatables::of(User::where('role', 3)->get())->make(true);
+    }
+
+    public function view_client($user_id) {
+        $user = User::where('id', $user_id)->first();
+        $meta = array('active' => 'client', 'title' => 'Client', 'user' => $user);
+        return view('administrator.pages.client.manage', $meta);
+    }
+
     public function employee_page() {
         $meta = array('active' => 'employee', 'title' => 'Employee');
         return view('administrator.pages.employee', $meta);
+    }
+
+    public function get_employees() {
+        return Datatables::of(User::where('role', 2)->get())->make(true);
+    }
+
+    public function view_employee($user_id) {
+        $user = User::where('id', $user_id)->first();
+        $meta = array('active' => 'employee', 'title' => 'Employee', 'user' => $user);
+        return view('administrator.pages.employee.manage', $meta);
     }
 
     public function leave_request_page() {
@@ -45,8 +67,6 @@ class HomeController extends Controller
         $meta = array('active' => 'project', 'title' => 'Project');
         return view('administrator.pages.projects', $meta);
     }
-
-
 
     public function meeting_minutes_page() {
         $meta = array(

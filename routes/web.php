@@ -29,16 +29,26 @@ Route::prefix('auth')->group(function() {
    Route::post('password', 'HomeController@submit_password')->name('home.password.submit');
 });
 
+
 Route::prefix('administrator')->namespace('Administrator')->group(function() {
 
    Route::get('/', 'HomeController@index')->name('admin.home');
 
    Route::prefix('clients')->group(function() {
       Route::get('/', 'HomeController@client_page')->name('admin.client');
+      Route::get('show/{user_id?}', 'HomeController@view_client')->name('admin.view.client');
+      
+      // datatable
+      Route::get('get-clients', 'HomeController@get_clients')->name('admin.api.get_clients');
+
    });
 
    Route::prefix('employees')->group(function() {
       Route::get('/', 'HomeController@employee_page')->name('admin.employee');
+      Route::get('show/{user_id?}', 'HomeController@view_employee')->name('admin.view.employee');
+
+      // datatable
+      Route::get('get-employees', 'HomeController@get_employees')->name('admin.api.get_employees');
    });
 
    Route::prefix('leave_request')->group(function() {

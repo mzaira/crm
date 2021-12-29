@@ -1,5 +1,6 @@
 const mix = require('laravel-mix');
 
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -23,6 +24,7 @@ mix.styles([
 ], 'public/src/css/home.css').version();
 
 mix.js('resources/js/administrator.js',
+        'resources/js/admin/client.js',
       'public/src/js/administrator.js')
 .version();
 

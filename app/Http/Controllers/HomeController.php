@@ -26,7 +26,9 @@ class HomeController extends Controller
     }
 
     public function register() {
-        return view('public.pages.register');
+        if(!auth()->user()) {
+            return view('public.pages.register');
+        }
     }
 
     public function submit_login() {
